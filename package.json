@@ -1,0 +1,17 @@
+{
+  "name": "marvel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel public/index.html --open",
+    "build": "parcel build public/index.html"
+  },
+  "author": "\"Denis Pishnenko\"",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.0.1"
+  },
+  "dependencies": {
+    "axios": "^0.24.0"
+  }
+}
