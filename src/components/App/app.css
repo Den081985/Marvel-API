@@ -1,0 +1,45 @@
+/* Создаем переменные для цветов */
+:root {
+  --color-dark: #222222;
+  --color-blue: #3199dc;
+  --color-light: #f8f9fa;
+
+  --spacing-small: 10px;
+  --spacing-medium: 15px;
+  --spacing-large: 20px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--color-dark);
+  font-size: 16px;
+  line-height: 1.7;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+/* Стилизация скролла для FireFox */
+* {
+  scrollbar-color: var(--color-blue) var(--color-dark);
+  scrollbar-width: thin;
+}
+
+/* Стилизация скролла для Chrome */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-blue);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-dark);
+}

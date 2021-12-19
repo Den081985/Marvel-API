@@ -1,0 +1,39 @@
+/* Transition позволяет определять переходное состояние между двумя состояниями элемента. Различные состояния могут быть определены с помощью псевдоклассов, таких как :hover или :active или установлены динамически с помощью JavaScript. */
+/* CSS transitions предоставляют способ контролировать скорость анимации, при изменении CSS-свойств. */
+/*CSS свойство filter  позволяет вам применять к элементу такие графические, как размытие и смещение цвета.
+ Фильтры обычно используются для регулировки рендеринга изображений, фонов и рамок.*/
+
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,500&display=swap");
+
+.comics__container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.comics__item {
+  background-color: var(--color-light);
+  width: 250px;
+  margin: var(--spacing-large);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.comics__name {
+  color: var(--color-dark);
+  font-family: "Kanit", sans-serif;
+  display: flex;
+  margin: auto;
+  padding: var(--spacing-small) var(--spacing-medium);
+}
+
+.comics__img {
+  width: 100%;
+}
+
+.comics__item:hover {
+  transform: rotate(-3deg) scale(0.95);
+  filter: saturate(150%);
+}
