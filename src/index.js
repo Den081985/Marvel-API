@@ -1,18 +1,17 @@
-/*Импортируем аксиос,создаем ключ для апи и асинхронную самовызывающуюся
-функцию с методом класса getDataApi.getData
- */
+/*Создаем асинхронную самовызывающуюся функцию с методом класса App.render()
+и импортируем  экземпляр класса App*/
 
 // const API_URL = "https://gateway.marvel.com/v1/public/comics";
 
 // const API_URL = "https://gateway.marvel.com/v1/public/characters";
 
-import { API_KEY, API_URL, URL_COMICS } from "../constants/api";
+import App from "../src/components/App/app";
 
-import { getDataApi } from "./utils/getDataApi";
+import Comics from "./components/Comics";
 
 // Асинхронная самовызывающаяся функция
-
+//после рендеринга для каждого элемента устанавливаем метод с обработчиком события
 (async () => {
-  const data = await getDataApi.getData(API_URL + URL_COMICS);
-  console.log(data);
+  await App.render();
+  Comics.eventListener();
 })();
