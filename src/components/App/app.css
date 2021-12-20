@@ -1,3 +1,4 @@
+/* В этом файле задаем свойства,которые применяются глобально,не входят в модули CSS  */
 /* Создаем переменные для цветов */
 :root {
   --color-dark: #222222;
@@ -42,4 +43,23 @@ body {
 
 ::-webkit-scrollbar-track {
   background-color: var(--color-dark);
+}
+/* Создаем глобальный CSS классы для кнопки и изображений */
+:global(.btn) {
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
+:global(.img-contain) {
+  display: block;
+  object-fit: contain;
+  object-position: center;
+}
+
+:global(.img-cover) {
+  display: block;
+  object-fit: cover;
+  object-position: center;
 }
