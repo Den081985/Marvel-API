@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,600&display=swap");
+.error__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.error__alert {
+  font-size: 20px;
+  text-align: center;
+  color: var(--color-light);
+  font-family: "Kanit", sans-serif;
+}
