@@ -18,18 +18,19 @@ import {
 import { getDataApi } from "../../utils/getDataApi";
 
 import { ROOT_INDEX } from "../../../constants/root";
+
+import Error from "../Error";
 // Импортируем CSS-модуль и сохраняем в объект classes.Далее обращаемся к свойствам с таким синтаксисом ${classes.comics__item}
 import classes from "./Comics.css";
 
 class Comics {
-  async render() {
+  renderComics(data) {
     let htmlContent = ``;
-    const data = await getDataApi.getData(API_URL + URL_COMICS);
     data.forEach(({ id, title, thumbnail: { path, extension } }) => {
       if (path.lastIndexOf(IMG_NOT_AVAILABLE) === -1) {
         //формируем путь запроса для получения персонажей комикса
         const uri = API_URL + URL_COMICS + "/" + id + URL_CHARACTERS;
-        //   формируем путь запроса для получения списков комиксов
+        //   формируем путь запроса для получения изображений комиксов
         const imgSrc = path + "/" + IMG_STANDARD_XLARGE + "." + extension;
         htmlContent += `
         <li class = "comics__item ${classes.comics__item}" data-uri = "${uri}">
@@ -48,6 +49,19 @@ class Comics {
     `;
 
     ROOT_INDEX.innerHTML = htmlWrapper;
+  }
+  /*В методе render проверяем полученные данные(data) и в случае успешного
+  получения данных рендерим их в корневой элемент,в случае ошибки-вызываем Error.render()  */
+  async render() {
+    const data = await getDataApi.getData(API_URL + URL_COMICS);
+
+    if (data) {
+      this.renderComics(data);
+    } else {
+      Error.render();
+    }
+
+    // Запись проверки с помощью тернарного оператора data ?  this.renderComics(data) :  Error.render();
   }
   /*В методе получаем в DOM все элементы с классом comics__item и для каждого из них 
 определяем обработчик событий и переменную uri в которую сохраняется атрибут data-uri
