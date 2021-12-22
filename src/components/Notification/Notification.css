@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,600&display=swap");
+
+.notification__container {
+  position: fixed;
+  bottom: var(--spacing-large);
+  left: var(--spacing-large);
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-medium) var(--spacing-large);
+  border: 1px solid var(--color-dark);
+  background-color: var(--color-light);
+}
+
+.notification__close {
+  width: 25px;
+  height: 25px;
+  margin-left: var(--spacing-large);
+}
+
+.notification__text {
+  font-family: "Kanit", sans-serif;
+}
