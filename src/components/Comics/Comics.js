@@ -19,6 +19,8 @@ import { getDataApi } from "../../utils/getDataApi";
 
 import { ROOT_INDEX } from "../../../constants/root";
 
+import Characters from "../Characters/Characters";
+
 import Error from "../Error";
 // Импортируем CSS-модуль и сохраняем в объект classes.Далее обращаемся к свойствам с таким синтаксисом ${classes.comics__item}
 import classes from "./Comics.css";
@@ -29,7 +31,7 @@ class Comics {
     data.forEach(({ id, title, thumbnail: { path, extension } }) => {
       if (path.lastIndexOf(IMG_NOT_AVAILABLE) === -1) {
         //формируем путь запроса для получения персонажей комикса
-        const uri = API_URL + URL_COMICS + "/" + id + URL_CHARACTERS;
+        const uri = API_URL + URL_COMICS + "/" + id + "/" + URL_CHARACTERS;
         //   формируем путь запроса для получения изображений комиксов
         const imgSrc = path + "/" + IMG_STANDARD_XLARGE + "." + extension;
         htmlContent += `
@@ -71,7 +73,7 @@ class Comics {
     document.querySelectorAll(".comics__item").forEach((element) => {
       const uri = element.getAttribute("data-uri");
       element.addEventListener("click", () => {
-        console.log(uri);
+        Characters.render(uri);
       });
     });
   }
