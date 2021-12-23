@@ -515,7 +515,6 @@ var _error = require("../Error");
 var _errorDefault = parcelHelpers.interopDefault(_error);
 // Импортируем CSS-модуль и сохраняем в объект classes.Далее обращаемся к свойствам с таким синтаксисом ${classes.comics__item}
 var _comicsCss = require("./Comics.css");
-var _comicsCssDefault = parcelHelpers.interopDefault(_comicsCss);
 class Comics {
     renderComics(data) {
         let htmlContent = ``;
@@ -526,9 +525,9 @@ class Comics {
                 //   формируем путь запроса для получения изображений комиксов
                 const imgSrc = path + "/" + _api.IMG_STANDARD_XLARGE + "." + extension;
                 htmlContent += `
-        <li class = "comics__item ${_comicsCssDefault.default.comics__item}" data-uri = "${uri}">
-            <span class = "${_comicsCssDefault.default.comics__name}">${title}</span>
-            <img class = "img-contain ${_comicsCssDefault.default.comics__img}" src = "${imgSrc}"/>
+        <li class = "comics__item ${_comicsCss.comics__item}" data-uri = "${uri}">
+            <span class = "${_comicsCss.comics__name}">${title}</span>
+            <img class = "img-contain ${_comicsCss.comics__img}" src = "${imgSrc}"/>
         
         </li>
       
@@ -536,7 +535,7 @@ class Comics {
             }
         });
         const htmlWrapper = `
-    <ul class = "${_comicsCssDefault.default.comics__container}">${htmlContent}</ul>
+    <ul class = "${_comicsCss.comics__container}">${htmlContent}</ul>
     
     `;
         _root.ROOT_INDEX.innerHTML = htmlWrapper;
@@ -576,7 +575,7 @@ parcelHelpers.export(exports, "IMG_STANDARD_XLARGE", ()=>IMG_STANDARD_XLARGE
 );
 parcelHelpers.export(exports, "IMG_NOT_AVAILABLE", ()=>IMG_NOT_AVAILABLE
 );
-const API_URL = "http://gateway.marvel.com/v1/public/";
+const API_URL = "https://gateway.marvel.com/v1/public/";
 const URL_COMICS = "comics";
 const URL_CHARACTERS = "characters";
 const API_KEY = "a5837db97d72016c81a7a776f4240db9";
@@ -2229,14 +2228,13 @@ parcelHelpers.defineInteropFlag(exports);
 // Создаем класс для отображения ошибки
 var _root = require("../../../constants/root");
 var _errorCss = require("./Error.css");
-var _errorCssDefault = parcelHelpers.interopDefault(_errorCss);
 class Error {
     render() {
         const htmlWrapper = `
-        <div class = "${_errorCssDefault.default.error__container}">
+        <div class = "${_errorCss.error__container}">
             <span>
-                <p class = "${_errorCssDefault.default.error__alert}">Произошла ошибка</p>
-                <p class = "${_errorCssDefault.default.error__alert}">Попробуйте перезагрузить страницу</p>
+                <p class = "${_errorCss.error__alert}">Произошла ошибка</p>
+                <p class = "${_errorCss.error__alert}">Попробуйте перезагрузить страницу</p>
             </span>
         </div>
       
@@ -2262,7 +2260,6 @@ var _notification = require("../Notification/Notification");
 var _notificationDefault = parcelHelpers.interopDefault(_notification);
 // Импортируем класс CSS
 var _charactersCss = require("./Characters.css");
-var _charactersCssDefault = parcelHelpers.interopDefault(_charactersCss);
 //Импортируем изображение для закрытия в переменную imgCloseWhite,в которой при сборке оно будет хранится
 var _icons8удалитьSvg = require("./img/icons8-удалить.svg");
 var _icons8удалитьSvgDefault = parcelHelpers.interopDefault(_icons8удалитьSvg);
@@ -2273,19 +2270,19 @@ class Characters {
         data.forEach(({ name , thumbnail: { path , extension  }  })=>{
             const imgSrc = path + "/" + _api.IMG_STANDARD_XLARGE + "." + extension;
             htmlContent += `
-        <li class = "${_charactersCssDefault.default.characters__item}">
-            <img  class = "img-cover ${_charactersCssDefault.default.characters__img}"src = "${imgSrc}"/>
-            <span class = "${_charactersCssDefault.default.characters__name}">${name}</span>
+        <li class = "${_charactersCss.characters__item}">
+            <img  class = "img-cover ${_charactersCss.characters__img}"src = "${imgSrc}"/>
+            <span class = "${_charactersCss.characters__name}">${name}</span>
         </li>
       
       `;
         });
         const htmlWrapper = `
-       <div class = "${_charactersCssDefault.default.wrapper}">
-            <ul class = "${_charactersCssDefault.default.characters__container}">
+       <div class = "${_charactersCss.wrapper}">
+            <ul class = "${_charactersCss.characters__container}">
             ${htmlContent}
             </ul>
-            <button class = "btn btn-contain ${_charactersCssDefault.default.characters__close}"
+            <button class = "btn btn-contain ${_charactersCss.characters__close}"
             onclick = "modal.innerHTML = ''"
             style = "background-image: url(${_icons8удалитьSvgDefault.default})"
             ></button>
@@ -2358,16 +2355,15 @@ parcelHelpers.defineInteropFlag(exports);
 //Создаем класс для отображения элемента,информирующего о отсутствии персонажа комикса
 var _root = require("../../../constants/root");
 var _notificationCss = require("./Notification.css");
-var _notificationCssDefault = parcelHelpers.interopDefault(_notificationCss);
 var _icons8удалитьSvg = require("./Img/icons8-удалить.svg");
 var _icons8удалитьSvgDefault = parcelHelpers.interopDefault(_icons8удалитьSvg);
 class Notification {
     render() {
         const htmlWrapper = `
     
-        <div class = "${_notificationCssDefault.default.notification__container}">
-            <span class = "${_notificationCssDefault.default.notification__text}">No contents</span>
-            <button class = "btn btn-contain ${_notificationCssDefault.default.notification__close}"
+        <div class = "${_notificationCss.notification__container}">
+            <span class = "${_notificationCss.notification__text}">No contents</span>
+            <button class = "btn btn-contain ${_notificationCss.notification__close}"
             onclick = "modal.innerHTML = ''"
             style = "background-image: url(${_icons8удалитьSvgDefault.default})"
             ></button>
