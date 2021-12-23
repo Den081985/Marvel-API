@@ -1,6 +1,6 @@
 // константы с адресами для запросов
 
-export const API_URL = "http://gateway.marvel.com/v1/public/";
+export const API_URL = "https://gateway.marvel.com/v1/public/";
 
 export const URL_COMICS = "comics";
 
