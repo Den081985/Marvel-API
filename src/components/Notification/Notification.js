@@ -2,7 +2,7 @@
 
 import { ROOT_MODAL } from "../../../constants/root";
 
-import classes from "./Notification.css";
+import * as classes from "./Notification.css";
 
 import imgCloseBlack from "./Img/icons8-удалить.svg";
 

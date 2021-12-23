@@ -23,7 +23,7 @@ import Characters from "../Characters/Characters";
 
 import Error from "../Error";
 // Импортируем CSS-модуль и сохраняем в объект classes.Далее обращаемся к свойствам с таким синтаксисом ${classes.comics__item}
-import classes from "./Comics.css";
+import * as classes from "./Comics.css";
 
 class Comics {
   renderComics(data) {

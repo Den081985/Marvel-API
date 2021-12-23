@@ -2,7 +2,7 @@
 
 import { ROOT_INDEX } from "../../../constants/root";
 
-import classes from "./Error.css";
+import * as classes from "./Error.css";
 
 class Error {
   render() {

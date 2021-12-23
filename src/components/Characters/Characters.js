@@ -9,7 +9,7 @@ import { IMG_STANDARD_XLARGE } from "../../../constants/api";
 import Notification from "../Notification/Notification";
 
 // Импортируем класс CSS
-import classes from "./Characters.css";
+import * as classes from "./Characters.css";
 
 //Импортируем изображение для закрытия в переменную imgCloseWhite,в которой при сборке оно будет хранится
 import imgCloseWhite from "./img/icons8-удалить.svg";
