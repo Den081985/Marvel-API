@@ -1,0 +1,217 @@
+@import "https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,500&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,600&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,600&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,600&display=swap";
+/* Transition позволяет определять переходное состояние между двумя состояниями элемента. Различные состояния могут быть определены с помощью псевдоклассов, таких как :hover или :active или установлены динамически с помощью JavaScript. */
+/* CSS transitions предоставляют способ контролировать скорость анимации, при изменении CSS-свойств. */
+/*CSS свойство filter  позволяет вам применять к элементу такие графические, как размытие и смещение цвета.
+ Фильтры обычно используются для регулировки рендеринга изображений, фонов и рамок.
+ 
+ Используем PostCSS модули,в модулях необходимо использовать только классы,к которым при
+ экспорте добавляется уникальный хэш,который позволяет именам не конфликтовать.*/
+._comics__container_ce6070 {
+  display: flex;
+  flex-wrap: wrap;
+}
+._comics__item_ce6070 {
+  background-color: var(--color-light);
+  width: 250px;
+  margin: var(--spacing-large);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.5s;
+  cursor: pointer;
+}
+._comics__name_ce6070 {
+  color: var(--color-dark);
+  font-family: "Kanit", sans-serif;
+  display: flex;
+  margin: auto;
+  padding: var(--spacing-small) var(--spacing-medium);
+}
+._comics__img_ce6070 {
+  width: 100%;
+}
+._comics__item_ce6070:hover {
+  transform: rotate(-3deg) scale(0.95);
+  filter: saturate(150%);
+}
+
+._error__container_4d8fd2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+._error__alert_4d8fd2 {
+  font-size: 20px;
+  text-align: center;
+  color: var(--color-light);
+  font-family: "Kanit", sans-serif;
+}
+
+/*CSS свойство backdrop-filter позволяет вам использовать визуальные эффекты - 
+такие как размытие или смещение цвета фона - за элементом.
+
+Свойство white-space управляет тем, как обрабатываются пробельные символы внутри элемента.
+
+Свойство CSS text-overflow устанавливает, как пользователям сообщается о скрытом переполнении. 
+Его можно обрезать, отображать многоточие (' ') или отображать настраиваемую строку.
+ellipsis значение ключевого слова будет отображать многоточие 
+ для обозначения вырезанного текста*/
+
+._wrapper_a9fe0b {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+}
+
+._characters__container_a9fe0b {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 80%;
+  max-width: 1200px;
+  height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: var(--spacing-large);
+  overflow: auto;
+  background: var(--color-light);
+}
+
+._characters__item_a9fe0b {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 200px;
+  height: 250px;
+  margin: var(--spacing-medium);
+  border: 4px solid var(--color-light);
+  box-shadow: var(--box-shadow);
+  background: var(--color-light);
+}
+
+._characters__img_a9fe0b {
+  width: 100%;
+}
+
+._characters__name_a9fe0b {
+  padding: var(--spacing-small);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+  font-family: "Kanit", sans-serif;
+}
+
+._characters__close_a9fe0b {
+  position: absolute;
+  top: var(--spacing-large);
+  right: var(--spacing-large);
+  width: 35px;
+  height: 35px;
+}
+
+._notification__container_6dfd0a {
+  position: fixed;
+  bottom: var(--spacing-large);
+  left: var(--spacing-large);
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-medium) var(--spacing-large);
+  border: 1px solid var(--color-dark);
+  background-color: var(--color-light);
+}
+
+._notification__close_6dfd0a {
+  width: 25px;
+  height: 25px;
+  margin-left: var(--spacing-large);
+}
+
+._notification__text_6dfd0a {
+  font-family: "Kanit", sans-serif;
+}
+
+/* В этом файле задаем свойства,которые применяются глобально,не входят в модули CSS  */
+/* Создаем переменные для цветов */
+:root {
+  --color-dark: #222222;
+  --color-blue: #3199dc;
+  --color-light: #f8f9fa;
+
+  --spacing-small: 10px;
+  --spacing-medium: 15px;
+  --spacing-large: 20px;
+
+  --box-shadow: 0 2px 24px rgba(168, 175, 196, 0.5);
+}
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--color-dark);
+  font-size: 16px;
+  line-height: 1.7;
+  font-family: Arial, Helvetica, sans-serif;
+}
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+/* Стилизация скролла для FireFox */
+* {
+  scrollbar-color: var(--color-blue) var(--color-dark);
+  scrollbar-width: thin;
+}
+/* Стилизация скролла для Chrome */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-blue);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--color-dark);
+}
+/* Создаем глобальный CSS классы для кнопки и изображений */
+.btn {
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+.btn-contain {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+.img-contain {
+  display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+.img-cover {
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+/*# sourceMappingURL=index.a9459857.css.map */
